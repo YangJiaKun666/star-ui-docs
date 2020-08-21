@@ -24,13 +24,18 @@
         </div>
         <div class="card">
             <h2>弹出位置</h2>
-            <pre><code><span class="hljs-comment">&lt;!-- 通过定义position属性来设置弹出层出现的位置，可选值为：center、top、bottom、left、right --&gt;</span>
+            <pre><code><span class="hljs-comment">&lt;!-- 通过定义position属性来设置弹出层出现的位置，可选值为：center、top、bottom、left、right，使用size来定义自定义内容的大小 --&gt;</span>
     &lt;<span class="hljs-name">star-button</span> @<span class="hljs-attr">click</span>="<span class="hljs-string">showPopupPosition('center')</span>"&gt;居中弹出&lt;/<span class="hljs-name">star-button</span>&gt;
     &lt;<span class="hljs-name">star-button</span> @<span class="hljs-attr">click</span>="<span class="hljs-string">showPopupPosition('top')</span>"&gt;顶部弹出&lt;/<span class="hljs-name">star-button</span>&gt;
     &lt;<span class="hljs-name">star-button</span> @<span class="hljs-attr">click</span>="<span class="hljs-string">showPopupPosition('bottom')</span>"&gt;底部弹出&lt;/<span class="hljs-name">star-button</span>&gt;
     &lt;<span class="hljs-name">star-button</span> @<span class="hljs-attr">click</span>="<span class="hljs-string">showPopupPosition('left')</span>"&gt;左侧弹出&lt;/<span class="hljs-name">star-button</span>&gt;
     &lt;<span class="hljs-name">star-button</span> @<span class="hljs-attr">click</span>="<span class="hljs-string">showPopupPosition('right')</span>"&gt;右侧弹出&lt;/<span class="hljs-name">star-button</span>&gt;
-    &lt;<span class="hljs-name">star-popup</span> <span class="hljs-attr">v-model</span>="<span class="hljs-string">showPopup</span>" :<span class="hljs-attr">position</span>="<span class="hljs-string">position</span>" /&gt;
+    &lt;<span class="hljs-name">star-popup</span>
+        <span class="hljs-attr">v-model</span>="<span class="hljs-string">showPopup</span>" :<span class="hljs-attr">position</span>="<span class="hljs-string">position</span>" 
+        :<span class="hljs-attr">size</span>="<span class="hljs-string">{ width: '100%', height: '60%' }</span>"
+    &gt;
+        ... <span class="hljs-comment">// 此处为自定义内容</span>
+    &lt;/<span class="hljs-name">star-popup</span>&gt;
 
     <span class="hljs-keyword">export default</span> {
         data() {
@@ -50,6 +55,10 @@
         <props-table :propsData="propsData"></props-table>
         <!-- events -->
         <event-table :eventsData="eventsData"></event-table>
+        <!-- slots -->
+        <slot-table
+            :slotsData="[{ name: 'default', decs: '自定的插槽' }]"
+        ></slot-table>
     </page-slot>
 </template>
 <script>
@@ -69,6 +78,19 @@ export default {
                         '弹出层内容弹出的位置，可选值为：center、top、bottom、left、right',
                     type: 'string',
                     default: 'center',
+                },
+                {
+                    value: 'size',
+                    decs:
+                        '弹出层内容区域的大小，可定义宽高，以对象形式传入，宽高可传百分比也可传入固定像素',
+                    type: 'object',
+                    default: '{ width: "",height: "" }',
+                },
+                {
+                    value: 'padding',
+                    decs: '是否给元素添加内边距',
+                    type: 'boolean',
+                    default: 'fasle',
                 },
             ],
             eventsData: [
