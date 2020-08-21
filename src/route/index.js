@@ -57,109 +57,73 @@ const routes = [
                 path: '/home/install',
                 name: 'install',
                 meta: { name: 'star-ui' },
-                components: {
-                    explain: install,
-                    example: comIndex,
-                },
+                component: install
             },
             {
                 path: '/home/theme',
                 name: 'theme',
                 meta: { name: 'star-ui' },
-                components: {
-                    explain: theme,
-                    example: comIndex,
-                },
+                component: theme
             },
             {
                 path: '/home/transition',
                 name: 'transition-demo',
                 meta: { name: 'star-transition' },
-                components: {
-                    explain: transitionText,
-                    example: transitionCom,
-                },
+                component: transitionText
             },
             {
                 path: '/home/input',
                 name: 'input-demo',
                 meta: { name: 'star-input' },
-                components: {
-                    explain: inputText,
-                    example: inputCom,
-                },
+                component: inputText
             },
             {
                 path: '/home/button',
                 name: 'button-demo',
                 meta: { name: 'star-button' },
-                components: {
-                    explain: buttonText,
-                    example: buttonCom,
-                },
+                component: buttonText
             },
             {
                 path: '/home/image',
                 name: 'image-demo',
                 meta: { name: 'star-image' },
-                components: {
-                    explain: imageText,
-                    example: imageCom,
-                },
+                component: imageText
             },
             {
                 path: '/home/icon',
                 name: 'icon-demo',
                 meta: { name: 'star-icon' },
-                components: {
-                    explain: iconText,
-                    example: iconCom,
-                },
+                component: iconText
             },
             {
                 path: '/home/checkbox',
                 name: 'checkbox-demo',
                 meta: { name: 'star-checkbox' },
-                components: {
-                    explain: checkboxText,
-                    example: checkboxCom,
-                },
+                component: checkboxText
             },
             {
                 path: '/home/navbar',
                 name: 'navbar-demo',
                 meta: { name: 'star-navbar' },
-                components: {
-                    explain: navbarText,
-                    example: navbarCom,
-                },
+                component: navbarText
             },
             {
                 path: '/home/tabbar',
                 name: 'tabbar-demo',
                 meta: { name: 'star-tab' },
-                components: {
-                    explain: tabText,
-                    example: tabCom,
-                },
+                component: tabText
             },
             {
                 path: '/home/notice',
                 name: 'notice-demo',
                 meta: { name: 'star-notice' },
-                components: {
-                    explain: noticeText,
-                    example: noticeCom,
-                },
+                component: noticeText
             },
             {
                 path: '/home/popup',
                 name: 'popup-demo',
                 meta: { name: 'star-popup' },
-                components: {
-                    explain: popupText,
-                    example: popupCom,
-                },
+                component: popupText
             },
         ],
     },

@@ -29,28 +29,17 @@
             </div>
             <div class="right-content scoll-bar">
                 <star-transition name="star-transform-y">
-                    <router-view name="explain"></router-view>
+                    <router-view></router-view>
                 </star-transition>
             </div>
             <div class="phone-box">
-                <div class="phone">
-                    <div class="header">
-                        <star-icon
-                            class="back-btn"
-                            v-if="$route.meta.name != 'star-ui'"
-                            @click="$router.go(-1)"
-                            name="angle-left"
-                            size="22"
-                            color="#999"
-                        />
-                        {{ $route.meta.name }}
-                    </div>
-                    <div class="body scoll-bar">
-                        <star-transition name="star-transform-y">
-                            <router-view name="example"></router-view>
-                        </star-transition>
-                    </div>
-                </div>
+                <iframe
+                    @load="routeChange"
+                    :src="path"
+                    scrolling="no"
+                    class="phone"
+                    frameborder="0"
+                ></iframe>
             </div>
         </div>
     </div>
@@ -59,6 +48,7 @@
 export default {
     data() {
         return {
+            path: "http://localhost:8081/#/home/install",
             defaultMenus: [
                 { name: "安装与使用", path: "/home/install" },
                 { name: "颜色主题", path: "/home/theme" },
@@ -77,7 +67,25 @@ export default {
             ],
         };
     },
+    watch: {
+        $route: {
+            handler(to, form) {
+                let path = null;
+                if (to.meta.name == "star-ui") {
+                    path = "/home/install";
+                } else {
+                    path = to.path;
+                }
+                this.path = `http://localhost:8081/#${path}`;
+            },
+            deep: true,
+            immediate: true,
+        },
+    },
     methods: {
+        routeChange() {
+            console.log("routeChange");
+        },
         goPage(path) {
             if (this.$route.path == path || !path) return;
             this.$router.replace(path);
@@ -164,20 +172,6 @@ export default {
                 box-sizing: border-box;
                 border-radius: 20px;
                 overflow: hidden;
-                .header {
-                    height: 50px;
-                    text-align: center;
-                    line-height: 50px;
-                    background: #fff;
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: #333;
-                    position: relative;
-                }
-                .body {
-                    height: calc(100% - 50px);
-                    overflow: auto;
-                }
             }
         }
     }
@@ -197,12 +191,5 @@ export default {
 }
 .scoll-bar::-webkit-scrollbar {
     width: 0px;
-}
-.back-btn {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
 }
 </style>
