@@ -26,6 +26,8 @@ import tabText from '../pages/tab-demo/demo'
 import noticeText from '../pages/notice-demo/demo'
 // 弹出层
 import popupText from '../pages/popup-demo/demo'
+// 操作面板
+import actionSheetText from '../pages/action-sheet-demo/demo'
 
 Vue.use(VueRouter)
 
@@ -44,74 +46,67 @@ const routes = [
             {
                 path: '/home/install',
                 name: 'install',
-                meta: { name: 'star-ui' },
                 component: install,
             },
             {
                 path: '/home/theme',
                 name: 'theme',
-                meta: { name: 'star-ui' },
                 component: theme,
             },
             {
                 path: '/home/transition',
                 name: 'transition-demo',
-                meta: { name: 'star-transition' },
                 component: transitionText,
             },
             {
                 path: '/home/input',
                 name: 'input-demo',
-                meta: { name: 'star-input' },
                 component: inputText,
             },
             {
                 path: '/home/button',
                 name: 'button-demo',
-                meta: { name: 'star-button' },
                 component: buttonText,
             },
             {
                 path: '/home/image',
                 name: 'image-demo',
-                meta: { name: 'star-image' },
                 component: imageText,
             },
             {
                 path: '/home/icon',
                 name: 'icon-demo',
-                meta: { name: 'star-icon' },
                 component: iconText,
             },
             {
                 path: '/home/checkbox',
                 name: 'checkbox-demo',
-                meta: { name: 'star-checkbox' },
                 component: checkboxText,
             },
             {
                 path: '/home/navbar',
                 name: 'navbar-demo',
-                meta: { name: 'star-navbar' },
                 component: navbarText,
             },
             {
                 path: '/home/tabbar',
                 name: 'tabbar-demo',
-                meta: { name: 'star-tab' },
                 component: tabText,
             },
             {
                 path: '/home/notice',
                 name: 'notice-demo',
-                meta: { name: 'star-notice' },
                 component: noticeText,
             },
             {
                 path: '/home/popup',
                 name: 'popup-demo',
-                meta: { name: 'star-popup' },
                 component: popupText,
+            },
+            {
+                path: '/home/action-sheet',
+                name: 'action-sheet-demo',
+                component: actionSheetText,
             },
         ],
     },
