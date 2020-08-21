@@ -34,7 +34,8 @@
             </div>
             <div class="phone-box">
                 <iframe
-                    @load="routeChange"
+                    @load="routeLoad"
+                    @change="routeChange"
                     :src="path"
                     scrolling="no"
                     class="phone"
@@ -83,6 +84,9 @@ export default {
         },
     },
     methods: {
+        routeLoad() {
+            console.log("routeLoad");
+        },
         routeChange() {
             console.log("routeChange");
         },
