@@ -92,12 +92,12 @@
     </code></pre>
         </div>
         <div class="card">
-            <h2>隐藏取消按钮</h2>
+            <h2>显示取消按钮</h2>
             <p>
                 设置
-                <code>showCloseButton</code>来决定时候展示取消按钮
+                <code>showCloseButton</code>来决定是否展示取消按钮
             </p>
-            <pre><code><span class="hljs-comment">&lt;!-- 隐藏取消按钮 --&gt;</span>
+            <pre><code><span class="hljs-comment">&lt;!-- 显示取消按钮 --&gt;</span>
 &lt;<span class="hljs-name">star-button</span> @<span class="hljs-attr">click</span>="<span class="hljs-string">showAction = true</span>"&gt;打开面板&lt;/<span class="hljs-name">star-button</span>&gt;
 &lt;<span class="hljs-name">star-action-sheet</span> 
     <span class="hljs-attr">v-model</span>="<span class="hljs-string">showAction</span>" 
@@ -134,7 +134,7 @@ export default {
                 {
                     value: "options",
                     decs:
-                        "绑定的选项数据，格式为{ label: 'xxx', value: 'xxx' }",
+                        "绑定的选项数据，格式为：{ label: 'xxx', value: 'xxx' }",
                     type: "array",
                     default: "——",
                 },
@@ -154,7 +154,7 @@ export default {
                     value: "showCloseButton",
                     decs: "是否显示取消按钮",
                     type: "boolean",
-                    default: "true",
+                    default: "false",
                 },
             ],
             eventsData: [
