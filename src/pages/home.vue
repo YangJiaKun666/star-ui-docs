@@ -78,7 +78,7 @@ export default {
                 } else {
                     path = to.path;
                 }
-                this.path = `http://139.155.233.206/#${path}`;
+                this.path = `http://139.155.233.206:8080/#${path}`;
             },
             deep: true,
             immediate: true,
