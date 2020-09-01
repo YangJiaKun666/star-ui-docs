@@ -66,6 +66,7 @@ export default {
                 { name: "notice消息通知", path: "/home/notice" },
                 { name: "popup弹出层", path: "/home/popup" },
                 { name: "actionSheet操作面板", path: "/home/action-sheet" },
+                { name: "calendar日历", path: "/home/calendar" },
             ],
         };
     },
@@ -78,7 +79,7 @@ export default {
                 } else {
                     path = to.path;
                 }
-                this.path = `http://localhost:8081/#${path}`;
+                this.path = `http://localhost:8082/#${path}`;
             },
             deep: true,
             immediate: true,

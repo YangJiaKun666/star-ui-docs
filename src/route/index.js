@@ -28,6 +28,8 @@ import noticeText from '../pages/notice-demo/demo'
 import popupText from '../pages/popup-demo/demo'
 // 操作面板
 import actionSheetText from '../pages/action-sheet-demo/demo'
+// 日历
+import calendarText from '../pages/calendar-demo/demo'
 
 Vue.use(VueRouter)
 
@@ -107,6 +109,11 @@ const routes = [
                 path: '/home/action-sheet',
                 name: 'action-sheet-demo',
                 component: actionSheetText,
+            },
+            {
+                path: '/home/calendar',
+                name: 'calendar-demo',
+                component: calendarText,
             },
         ],
     },
