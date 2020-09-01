@@ -79,7 +79,11 @@ export default {
                 } else {
                     path = to.path;
                 }
+<<<<<<< HEAD
                 this.path = `http://localhost:8082/#${path}`;
+=======
+                this.path = `http://yjk-dev.com:8080/#${path}`;
+>>>>>>> 5f9b479d821bf9fb8ca5b64aec6efe7ffede4f44
             },
             deep: true,
             immediate: true,
